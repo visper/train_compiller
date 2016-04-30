@@ -1,0 +1,22 @@
+m1 : ifflag;
+goto m2;
+backward;
+backward;
+///////////////
+////
+forward;
+goto m1;
+m2: backward;
+backward;
+backward;//comments
+
+#when "0000" => mem_out <= "11000000";	--ifflag	00
+#when "0001" => mem_out <= "10000110";  --goto		01
+#when "0010" => mem_out <= "01000000";  --b		10
+#when "0011" => mem_out <= "01000000";  --b		11
+#when "0100" => mem_out <= "00000000";  --f		100
+#when "0101" => mem_out <= "10000000";  --goto		101
+#when "0110" => mem_out <= "01000000";  --b		110
+#when "0111" => mem_out <= "01000000";  --b		111
+#when "1000" => mem_out <= "01000000";  --b		1000
+
